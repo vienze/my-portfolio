@@ -53,7 +53,7 @@
 
 /* BTN */
 .btn {
-  border: var(--border);
+  border: var(--border) !important;
   border-radius: var(--border-radius-default);
   color: var(--dark) !important;
   padding: 0.5rem 1.5rem;
@@ -199,6 +199,7 @@ a {
 }
 
 /* WORKS */
+
 .filter-button {
   display: flex;
   gap: 0 1.5rem;
@@ -236,6 +237,16 @@ a {
 
 .card:hover .icon-link {
   opacity: 1;
+}
+
+.hide {
+  display: none;
+  transition: display 150ms ease;
+}
+
+.filter-button .actived {
+  background-color: var(--warning) !important;
+  transition: all 150ms ease;
 }
 
 /* CONTACT */
@@ -288,6 +299,12 @@ a {
 
   /* WORKS */
   .filter-button {
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  /* CONTACT */
+  .detail p {
+    font-size: 0.8rem !important  ;
   }
 }

@@ -139,14 +139,26 @@
       <div class="container">
         <!-- TITLE SECTION -->
         <div class="col-12 mb-5">
-          <div class="title-section display-6 text-center fw-semibold">
+          <div
+            class="title-section display-6 text-center fw-semibold"
+            data-aos="zoom-in"
+            data-aos-delay="0"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+          >
             About Me
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-6 mb-5">
-            <div class="col">
+            <div
+              class="col"
+              data-aos="fade-right"
+              data-aos-delay="0"
+              data-aos-duration="1000"
+              data-aos-easing="ease"
+            >
               <span
                 class="btn btn-white rounded-pill fw-regular text-label mb-5 box-shadow"
                 >Nice to meet you!</span
@@ -154,6 +166,10 @@
             </div>
             <div
               class="col border border-2 border-dark box-shadow-no-hover p-4 rounded text-lg-start text-center"
+              data-aos="fade-right"
+              data-aos-delay="0"
+              data-aos-duration="1000"
+              data-aos-easing="ease"
             >
               <h4 class="fw-medium">
                 I'm a Freelancer Frontend Developer with over 1 years of
@@ -178,12 +194,22 @@
             <div class="col text-end">
               <span
                 class="btn btn-white rounded-pill fw-regular text-label mb-5 box-shadow"
+                data-aos="fade-left"
+                data-aos-delay="0"
+                data-aos-duration="1000"
+                data-aos-easing="ease"
                 >My Skill</span
               >
             </div>
             <div class="col">
               <div class="row gy-4">
-                <div class="col-md-6">
+                <div
+                  class="col-md-6"
+                  data-aos="fade-left"
+                  data-aos-delay="0"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease"
+                >
                   <div
                     class="btn-section rounded border border-2 border-dark box-shadow p-3 fw-medium bg-danger"
                   >
@@ -195,7 +221,13 @@
                     <span class="fw-medium ms-2">HTML</span>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div
+                  class="col-md-6"
+                  data-aos="fade-left"
+                  data-aos-delay="50"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease"
+                >
                   <div
                     class="btn-section rounded border border-2 border-dark box-shadow p-3 fw-medium bg-primary"
                   >
@@ -207,7 +239,13 @@
                     <span class="fw-medium ms-2">CSS</span>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div
+                  class="col-md-6"
+                  data-aos="fade-left"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease"
+                >
                   <div
                     class="btn-section rounded border border-2 border-dark box-shadow p-3 fw-medium bg-warning"
                   >
@@ -219,7 +257,13 @@
                     <span class="fw-medium ms-2">JAVASCRIPT</span>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div
+                  class="col-md-6"
+                  data-aos="fade-left"
+                  data-aos-delay="150"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease"
+                >
                   <div
                     class="btn-section rounded border border-2 border-dark box-shadow p-3 fw-medium bg-secondary"
                   >
@@ -231,7 +275,13 @@
                     <span class="fw-medium ms-2">BOOTSTRAP</span>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div
+                  class="col-md-6"
+                  data-aos="fade-left"
+                  data-aos-delay="150"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease"
+                >
                   <div
                     class="btn-section rounded border border-2 border-dark box-shadow p-3 fw-medium bg-white"
                   >
@@ -309,33 +359,35 @@
 
         <div class="row">
           <!-- FILTER BUTTON -->
-          <div class="col-md-12 mb-5">
-            <div class="filter-button">
-              <div
-                class="btn btn-warning fw-medium box-shadow-no-hover btn-no-hover"
-                data-category="all"
-              >
-                All
-              </div>
-              <div
-                class="btn btn-white fw-medium box-shadow-no-hover btn-no-hover"
-                data-category="website"
-              >
-                Website
-              </div>
-              <div
-                class="btn btn-white fw-medium box-shadow-no-hover btn-no-hover"
-                data-category="designs"
-              >
-                Designs
-              </div>
-            </div>
+          <div class="filter-button col-12 mb-5">
+            <button
+              class="btn actived fw-medium box-shadow-no-hover btn-no-hover"
+              data-category="all"
+            >
+              All
+            </button>
+            <button
+              class="btn fw-medium box-shadow-no-hover btn-no-hover"
+              data-category="website"
+            >
+              Website
+            </button>
+            <button
+              class="btn fw-medium box-shadow-no-hover btn-no-hover"
+              data-category="design"
+            >
+              Designs
+            </button>
           </div>
+
           <!-- FILTER CARD -->
           <div class="col-md-12">
-            <div class="row g-4 justify-content-center">
+            <div class="row filter-card g-4 justify-content-center">
               <!-- CARD -->
-              <div class="col-lg-3 col-md-4 col-12" data-category="all">
+              <div
+                class="col-lg-3 col-md-4 col-12 data-card"
+                data-category="website"
+              >
                 <a class="card" href="google.com">
                   <img
                     src="assets/img/img-card.png"
@@ -358,7 +410,10 @@
               </div>
               <!-- END CARD -->
               <!-- CARD -->
-              <div class="col-lg-3 col-md-4 col-12" data-category="all">
+              <div
+                class="col-lg-3 col-md-4 col-12 data-card"
+                data-category="design"
+              >
                 <a class="card" href="google.com">
                   <img
                     src="assets/img/img-card.png"
@@ -381,7 +436,10 @@
               </div>
               <!-- END CARD -->
               <!-- CARD -->
-              <div class="col-lg-3 col-md-4 col-12" data-category="all">
+              <div
+                class="col-lg-3 col-md-4 col-12 data-card"
+                data-category="website"
+              >
                 <a class="card" href="google.com">
                   <img
                     src="assets/img/img-card.png"
@@ -404,7 +462,10 @@
               </div>
               <!-- END CARD -->
               <!-- CARD -->
-              <div class="col-lg-3 col-md-4 col-12" data-category="all">
+              <div
+                class="col-lg-3 col-md-4 col-12 data-card"
+                data-category="design"
+              >
                 <a class="card" href="google.com">
                   <img
                     src="assets/img/img-card.png"
@@ -427,7 +488,10 @@
               </div>
               <!-- END CARD -->
               <!-- CARD -->
-              <div class="col-lg-3 col-md-4 col-12" data-category="all">
+              <div
+                class="col-lg-3 col-md-4 col-12 data-card"
+                data-category="website"
+              >
                 <a class="card" href="google.com">
                   <img
                     src="assets/img/img-card.png"
@@ -450,7 +514,10 @@
               </div>
               <!-- END CARD -->
               <!-- CARD -->
-              <div class="col-lg-3 col-md-4 col-12" data-category="all">
+              <div
+                class="col-lg-3 col-md-4 col-12 data-card"
+                data-category="design"
+              >
                 <a class="card" href="google.com">
                   <img
                     src="assets/img/img-card.png"
@@ -517,9 +584,7 @@
                   />
                   <div class="detail ms-3 text-start">
                     <span>MAIL</span>
-                    <p class="m-0 fw-medium" style="font-size: 1.25rem">
-                      mynameisherudin@gmail.com
-                    </p>
+                    <p class="m-0 fw-medium fs-5">mynameisherudin@gmail.com</p>
                   </div>
                 </div>
                 <div
