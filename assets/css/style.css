@@ -53,7 +53,7 @@
 
 /* BTN */
 .btn {
-  border: var(--border);
+  border: var(--border) !important;
   border-radius: var(--border-radius-default);
   color: var(--dark) !important;
   padding: 0.5rem 1.5rem;
@@ -140,9 +140,22 @@
 .border-dark {
   border-color: var(--dark) !important;
 }
+
 /* ROUNDED */
 .rounded {
   border-radius: var(--border-radius-default) !important;
+}
+
+/* TOOLTIPS */
+.tooltip-arrow {
+  margin-top: 0.5rem;
+}
+.tooltip-inner {
+  margin-top: 0.5rem;
+  color: var(--dark);
+  background-color: var(--danger);
+  font-weight: 500;
+  border: var(--border);
 }
 
 /* ---------- STYLE SET --------- */
@@ -174,6 +187,7 @@ a {
 
 .navbar-nav .nav-item .nav-link {
   color: var(--dark);
+  z-index: 999;
 }
 .navbar-nav .nav-item .nav-link.active {
   font-weight: 500;
@@ -199,6 +213,7 @@ a {
 }
 
 /* WORKS */
+
 .filter-button {
   display: flex;
   gap: 0 1.5rem;
@@ -238,6 +253,16 @@ a {
   opacity: 1;
 }
 
+.hide {
+  display: none;
+  transition: display 150ms ease;
+}
+
+.filter-button .actived {
+  background-color: var(--warning) !important;
+  transition: all 150ms ease;
+}
+
 /* CONTACT */
 .form-contact label {
   font-size: 0.875rem !important;
@@ -271,6 +296,7 @@ a {
   opacity: 0.5;
 }
 
+/* FOOTER */
 .footer span {
   font-size: 0.875rem;
   opacity: 0.8;
@@ -288,6 +314,17 @@ a {
 
   /* WORKS */
   .filter-button {
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  /* CONTACT */
+  .detail p {
+    font-size: 0.8rem !important  ;
+  }
+
+  /* FOOTER */
+  .footer span {
+    font-size: 0.7rem;
   }
 }

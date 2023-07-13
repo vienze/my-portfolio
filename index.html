@@ -10,8 +10,6 @@
     />
     <!-- BOOTSTRAP CSS-->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
-    <!-- SCROLL ANIMATION -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- CUSTOME CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Vienze - See my portfolio</title>
@@ -26,9 +24,7 @@
       class="navbar navbar-expand-lg bg-secondary border-bottom border-2 border-dark fixed-top py-3"
     >
       <div class="container">
-        <a href="/index.html" class="navbar-brand text-dark fw-semibold fs-4"
-          >Vienze</a
-        >
+        <a href="/" class="navbar-brand text-dark fw-semibold fs-4">Vienze</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -59,9 +55,12 @@
             </li>
           </ul>
           <a
-            href="#contact"
+            href="#"
             class="btn btn-danger rounded-pill box-shadow d-flex justify-content-center fw-medium"
-            >Hire me</a
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            data-bs-title="Coming Soon!"
+            >Shop</a
           >
         </div>
       </div>
@@ -74,47 +73,21 @@
           <div class="col-md-6 text-center text-lg-start text-md-start mt-lg-5">
             <span
               class="btn btn-secondary border-dark rounded-pill fw-medium text-label mb-3 box-shadow"
-              data-aos="fade-right"
-              data-aos-delay="0"
-              data-aos-duration="1000"
-              data-aos-easing="ease"
               >Who am i ?</span
             >
-            <h1
-              class="display-3 text-dark text-heading fw-bold"
-              data-aos="fade-right"
-              data-aos-delay="200"
-              data-aos-duration="1000"
-              data-aos-easing="ease"
-            >
+            <h1 class="display-3 text-dark text-heading fw-bold">
               I'm Herudin
             </h1>
-            <h2
-              class="fs-4 text-dark fw-semibold"
-              data-aos="fade-right"
-              data-aos-delay="400"
-              data-aos-duration="1000"
-              data-aos-easing="ease"
-            >
+            <h2 class="fs-4 text-dark fw-semibold">
               Frontend Developer | UI Designer
             </h2>
-            <p
-              class="text-dark mt-3 text-desc"
-              data-aos="fade-right"
-              data-aos-delay="600"
-              data-aos-duration="1000"
-              data-aos-easing="ease"
-            >
+            <p class="text-dark mt-3 text-desc">
               From design to code, I transform it into interactive and
               responsive web interfaces.
             </p>
             <a
               href="#works"
               class="btn btn-primary fw-medium mt-4 box-shadow cta"
-              data-aos="fade-right"
-              data-aos-delay="800"
-              data-aos-duration="1000"
-              data-aos-easing="ease"
             >
               See Works
             </a>
@@ -124,10 +97,6 @@
               src="assets/img/illustration-home.svg"
               alt="home"
               class="home-illustration img-fluid"
-              data-aos="fade-left"
-              data-aos-delay="0"
-              data-aos-duration="1000"
-              data-aos-easing="ease"
             />
           </div>
         </div>
@@ -309,33 +278,35 @@
 
         <div class="row">
           <!-- FILTER BUTTON -->
-          <div class="col-md-12 mb-5">
-            <div class="filter-button">
-              <div
-                class="btn btn-warning fw-medium box-shadow-no-hover btn-no-hover"
-                data-category="all"
-              >
-                All
-              </div>
-              <div
-                class="btn btn-white fw-medium box-shadow-no-hover btn-no-hover"
-                data-category="website"
-              >
-                Website
-              </div>
-              <div
-                class="btn btn-white fw-medium box-shadow-no-hover btn-no-hover"
-                data-category="designs"
-              >
-                Designs
-              </div>
-            </div>
+          <div class="filter-button col-12 mb-5">
+            <button
+              class="btn actived fw-medium box-shadow-no-hover btn-no-hover"
+              data-category="all"
+            >
+              All
+            </button>
+            <button
+              class="btn fw-medium box-shadow-no-hover btn-no-hover"
+              data-category="website"
+            >
+              Website
+            </button>
+            <button
+              class="btn fw-medium box-shadow-no-hover btn-no-hover"
+              data-category="design"
+            >
+              Designs
+            </button>
           </div>
+
           <!-- FILTER CARD -->
           <div class="col-md-12">
-            <div class="row g-4 justify-content-center">
+            <div class="row filter-card g-4 justify-content-center">
               <!-- CARD -->
-              <div class="col-lg-3 col-md-4 col-12" data-category="all">
+              <div
+                class="col-lg-3 col-md-4 col-12 data-card"
+                data-category="website"
+              >
                 <a class="card" href="google.com">
                   <img
                     src="assets/img/img-card.png"
@@ -358,7 +329,10 @@
               </div>
               <!-- END CARD -->
               <!-- CARD -->
-              <div class="col-lg-3 col-md-4 col-12" data-category="all">
+              <div
+                class="col-lg-3 col-md-4 col-12 data-card"
+                data-category="design"
+              >
                 <a class="card" href="google.com">
                   <img
                     src="assets/img/img-card.png"
@@ -381,7 +355,10 @@
               </div>
               <!-- END CARD -->
               <!-- CARD -->
-              <div class="col-lg-3 col-md-4 col-12" data-category="all">
+              <div
+                class="col-lg-3 col-md-4 col-12 data-card"
+                data-category="website"
+              >
                 <a class="card" href="google.com">
                   <img
                     src="assets/img/img-card.png"
@@ -404,7 +381,10 @@
               </div>
               <!-- END CARD -->
               <!-- CARD -->
-              <div class="col-lg-3 col-md-4 col-12" data-category="all">
+              <div
+                class="col-lg-3 col-md-4 col-12 data-card"
+                data-category="design"
+              >
                 <a class="card" href="google.com">
                   <img
                     src="assets/img/img-card.png"
@@ -427,7 +407,10 @@
               </div>
               <!-- END CARD -->
               <!-- CARD -->
-              <div class="col-lg-3 col-md-4 col-12" data-category="all">
+              <div
+                class="col-lg-3 col-md-4 col-12 data-card"
+                data-category="website"
+              >
                 <a class="card" href="google.com">
                   <img
                     src="assets/img/img-card.png"
@@ -450,7 +433,10 @@
               </div>
               <!-- END CARD -->
               <!-- CARD -->
-              <div class="col-lg-3 col-md-4 col-12" data-category="all">
+              <div
+                class="col-lg-3 col-md-4 col-12 data-card"
+                data-category="design"
+              >
                 <a class="card" href="google.com">
                   <img
                     src="assets/img/img-card.png"
@@ -517,9 +503,7 @@
                   />
                   <div class="detail ms-3 text-start">
                     <span>MAIL</span>
-                    <p class="m-0 fw-medium" style="font-size: 1.25rem">
-                      mynameisherudin@gmail.com
-                    </p>
+                    <p class="m-0 fw-medium fs-5">mynameisherudin@gmail.com</p>
                   </div>
                 </div>
                 <div
@@ -586,35 +570,39 @@
               </div>
 
               <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
+                <label for="nameUser" class="form-label">Name</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="name"
+                  id="nameUser"
                   placeholder="Your name"
                 />
-                <div id="nameHelp" class="form-text">no text</div>
+                <div id="nameHelp" class="form-text"></div>
               </div>
               <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
+                <label for="emailUser" class="form-label">Email</label>
                 <input
                   type="mail"
                   class="form-control"
-                  id="email"
+                  id="emailUser"
                   placeholder="Your email"
                 />
-                <div id="emailHelp" class="form-text">no text</div>
+                <div id="emailHelp" class="form-text"></div>
               </div>
               <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
+                <label for="messageUser" class="form-label">Message</label>
                 <textarea
-                  id="message"
+                  id="messageUser"
                   class="form-control"
                   placeholder="Enter a message"
                 ></textarea>
-                <div id="messageHelp" class="form-text">no text</div>
+                <div id="messageHelp" class="form-text"></div>
               </div>
-              <button type="submit" class="btn btn-white box-shadow">
+              <button
+                type="submit"
+                class="btn btn-white box-shadow"
+                id="sendContact"
+              >
                 Send Message
               </button>
             </form>
@@ -631,12 +619,7 @@
     </footer>
 
     <!-- BOOTSTRAP JS -->
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <!-- ANIMATION SCROLL -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- CUSTOME JS -->
     <script src="assets/js/script.js"></script>
   </body>
