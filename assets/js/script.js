@@ -106,17 +106,17 @@ const alertContact = document.querySelector(".alert-contact");
 // btnSend.classList.toggle("d-none");
 // btnLoading.classList.toggle("d-none");
 
+// email validation
+emailUser.addEventListener("keyup", emailValidation);
+// form submit
 if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // email validation
-    emailValidation();
-    emailUser.addEventListener("keyup", () => {
+    form.addEventListener("keyup", () => {
+      inputValidation();
       emailValidation();
     });
-
-    form.addEventListener("keyup", inputValidation);
 
     if (inputValidation() && emailValidation()) {
       btnSend.classList.toggle("d-none");
