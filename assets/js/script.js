@@ -1,16 +1,22 @@
 // NAVBAR CHANGE ICON TOGGLER MENU
 const iconTogglerMenu = document.querySelector(".navbar-toggler .bi");
 
-iconTogglerMenu.addEventListener("click", () => {
-  iconTogglerMenu.classList.toggle("bi-x");
-});
+if (iconTogglerMenu) {
+  iconTogglerMenu.addEventListener("click", () => {
+    iconTogglerMenu.classList.toggle("bi-x");
+  });
+}
 
-//FILTER CARD BUTTON
+// FILTER CARD BUTTON
 const filterButton = document.querySelectorAll(".filter-button button");
 const filterCard = document.querySelectorAll(".filter-card .data-card");
 
 const filterableCard = (e) => {
-  document.querySelector(".actived").classList.remove("actived");
+  const activeElement = document.querySelector(".actived");
+  if (activeElement) {
+    activeElement.classList.remove("actived");
+  }
+
   e.target.classList.add("actived");
 
   filterCard.forEach((card) => {
@@ -23,6 +29,7 @@ const filterableCard = (e) => {
     }
   });
 };
+
 filterButton.forEach((button) => {
   button.addEventListener("click", filterableCard);
 });
@@ -34,49 +41,100 @@ const emailUser = document.querySelector("#emailUser");
 const emailHelp = document.querySelector("#emailHelp");
 const messageUser = document.querySelector("#messageUser");
 const messageHelp = document.querySelector("#messageHelp");
-const sendContact = document.querySelector("#sendContact");
-
-const maxLength = {
-  name: 30,
-  email: 100,
-};
-
-const messageEmail = `
-mailto:mynameisherudin@gmail.com?subject=Message%20From%20%2D%20&${nameUser.value}body=${messageUser.value}
-`;
 
 // FUNCTION ALERT TEXT FORM
-const alertText = (params, color, message) => {
-  params.innerText = message.value;
-  params.classList.add(color);
-  const setAlert = setTimeout(() => {
-    params.innerText = null;
-  }, 4000);
+const alertText = (params, message = "") => {
+  params.innerText = message;
+  params.classList.add("text-danger");
 };
 
-// FUNCTION MAX TEXT FORM
-const maxLengthText = (params, nameMax, listMax) => {
-  const remainingText = params.length - maxLength.listMax;
-  //SET COLOR TEXT
-  params.classList.add("text-primary");
-  if (!params.length <= maxLength.listMax) {
-    params.classList.add("text-danger");
+const emailValidation = () => {
+  let emailValid = true;
+  const pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+
+  if (!emailUser.value.match(pattern)) {
+    alertText(emailHelp, "Please enter a valid email");
+    emailValid = false;
+  } else {
+    alertText(emailHelp);
   }
 
-  params.innerText = `Remaining text ${remainingText}`;
+  return emailValid;
 };
 
-const validation = () => {
-  // Message Empty
-  nameUser === ""
-    ? alertText(nameHelp, "text-danger", "Name is required")
-    : maxLengthText(nameUser, nameHelp, name);
-};
-validation();
+const inputValidation = () => {
+  let isValid = true;
 
-nameUser.addEventListener("keyup", () => {
-  nameHelp.innerText = nameUser.value;
-});
+  if (nameUser.value === "") {
+    alertText(nameHelp, "Name is required!");
+    isValid = false;
+  } else {
+    alertText(nameHelp);
+  }
+
+  if (emailUser.value === "") {
+    alertText(emailHelp, "Email is required!");
+    isValid = false;
+  } else {
+    alertText(emailHelp);
+  }
+
+  if (messageUser.value === "") {
+    alertText(messageHelp, "Message is required!");
+    isValid = false;
+  } else {
+    alertText(messageHelp);
+  }
+
+  return isValid;
+};
+
+const resetForm = () => {
+  nameUser.value = "";
+  emailUser.value = "";
+  messageUser.value = "";
+};
+
+// FUNCTION SUBMIT FORM
+const scriptURL =
+  "https://script.google.com/macros/s/AKfycbyQnpRSwpMvGeyIgVMDZcJ1Eb2ZooE6iTp0bXD5nOjJSwu9TVUJRAp1Oc07N39SZ_K4/exec";
+const form = document.forms["vienze-contact-form"];
+const btnSend = document.querySelector(".btn-send");
+const btnLoading = document.querySelector(".btn-loading");
+const alertContact = document.querySelector(".alert-contact");
+
+// btnSend.classList.toggle("d-none");
+// btnLoading.classList.toggle("d-none");
+
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // email validation
+    emailValidation();
+    emailUser.addEventListener("keyup", () => {
+      emailValidation();
+    });
+
+    form.addEventListener("keyup", inputValidation);
+
+    if (inputValidation() && emailValidation()) {
+      btnSend.classList.toggle("d-none");
+      btnLoading.classList.toggle("d-none");
+      fetch(scriptURL, { method: "POST", body: new FormData(form) }).then(
+        (response) => {
+          btnSend.classList.toggle("d-none");
+          btnLoading.classList.toggle("d-none");
+          alertContact.classList.toggle("d-none");
+          setTimeout(() => {
+            alertContact.classList.toggle("d-none");
+          }, 5000);
+          resetForm();
+        }
+      );
+    }
+  });
+}
 
 // BOOTSTRAP JAVASCRIPT
 // ENABLE TOOLTIPS

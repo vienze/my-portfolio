@@ -296,11 +296,22 @@ a {
   opacity: 0.5;
 }
 
+.alert {
+  border: var(--border);
+  border-radius: var(--border-radius-default);
+  color: var(--dark);
+}
+
+.alert-primary {
+  background-color: var(--primary);
+}
+
 /* FOOTER */
 .footer span {
   font-size: 0.875rem;
   opacity: 0.8;
   font-weight: 400;
+  color: var(--dark);
 }
 
 /* ---------- RESPONSIVE ---------- */
@@ -320,11 +331,11 @@ a {
 
   /* CONTACT */
   .detail p {
-    font-size: 0.8rem !important  ;
+    font-size: 0.8rem !important;
   }
 
   /* FOOTER */
   .footer span {
-    font-size: 0.7rem;
+    font-size: 0rem;
   }
 }

@@ -108,14 +108,26 @@
       <div class="container">
         <!-- TITLE SECTION -->
         <div class="col-12 mb-5">
-          <div class="title-section display-6 text-center fw-semibold">
+          <div
+            class="title-section display-6 text-center fw-semibold"
+            data-aos="zoom-in"
+            data-aos-delay="0"
+            data-aos-duration="1000"
+            data-aos-easing="ease"
+          >
             About Me
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-6 mb-5">
-            <div class="col">
+            <div
+              class="col"
+              data-aos="fade-right"
+              data-aos-delay="0"
+              data-aos-duration="1000"
+              data-aos-easing="ease"
+            >
               <span
                 class="btn btn-white rounded-pill fw-regular text-label mb-5 box-shadow"
                 >Nice to meet you!</span
@@ -123,6 +135,10 @@
             </div>
             <div
               class="col border border-2 border-dark box-shadow-no-hover p-4 rounded text-lg-start text-center"
+              data-aos="fade-right"
+              data-aos-delay="0"
+              data-aos-duration="1000"
+              data-aos-easing="ease"
             >
               <h4 class="fw-medium">
                 I'm a Freelancer Frontend Developer with over 1 years of
@@ -147,12 +163,22 @@
             <div class="col text-end">
               <span
                 class="btn btn-white rounded-pill fw-regular text-label mb-5 box-shadow"
+                data-aos="fade-left"
+                data-aos-delay="0"
+                data-aos-duration="1000"
+                data-aos-easing="ease"
                 >My Skill</span
               >
             </div>
             <div class="col">
               <div class="row gy-4">
-                <div class="col-md-6">
+                <div
+                  class="col-md-6"
+                  data-aos="fade-left"
+                  data-aos-delay="0"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease"
+                >
                   <div
                     class="btn-section rounded border border-2 border-dark box-shadow p-3 fw-medium bg-danger"
                   >
@@ -164,7 +190,13 @@
                     <span class="fw-medium ms-2">HTML</span>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div
+                  class="col-md-6"
+                  data-aos="fade-left"
+                  data-aos-delay="50"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease"
+                >
                   <div
                     class="btn-section rounded border border-2 border-dark box-shadow p-3 fw-medium bg-primary"
                   >
@@ -176,7 +208,13 @@
                     <span class="fw-medium ms-2">CSS</span>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div
+                  class="col-md-6"
+                  data-aos="fade-left"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease"
+                >
                   <div
                     class="btn-section rounded border border-2 border-dark box-shadow p-3 fw-medium bg-warning"
                   >
@@ -188,7 +226,13 @@
                     <span class="fw-medium ms-2">JAVASCRIPT</span>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div
+                  class="col-md-6"
+                  data-aos="fade-left"
+                  data-aos-delay="150"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease"
+                >
                   <div
                     class="btn-section rounded border border-2 border-dark box-shadow p-3 fw-medium bg-secondary"
                   >
@@ -200,7 +244,13 @@
                     <span class="fw-medium ms-2">BOOTSTRAP</span>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div
+                  class="col-md-6"
+                  data-aos="fade-left"
+                  data-aos-delay="150"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease"
+                >
                   <div
                     class="btn-section rounded border border-2 border-dark box-shadow p-3 fw-medium bg-white"
                   >
@@ -562,11 +612,24 @@
           <div class="col-md-6">
             <form
               class="form-contact border border-2 border-dark rounded box-shadow-no-hover p-4 bg-secondary"
+              name="vienze-contact-form"
             >
               <div class="col-12 mb-3">
                 <span class="fs-4 fw-medium text-center text-lg-start"
                   >Get in touch</span
                 >
+                <div
+                  class="alert alert-primary alert-dismissible fade show mt-3 mb-1 d-none alert-contact"
+                  role="alert"
+                >
+                  <strong>Success!</strong> Thanks for sending the message.
+                  <button
+                    type="button"
+                    class="btn-close text-dark"
+                    data-bs-dismiss="alert"
+                    aria-label="Close"
+                  ></button>
+                </div>
               </div>
 
               <div class="mb-3">
@@ -576,6 +639,8 @@
                   class="form-control"
                   id="nameUser"
                   placeholder="Your name"
+                  maxlength="30"
+                  name="name"
                 />
                 <div id="nameHelp" class="form-text"></div>
               </div>
@@ -586,6 +651,8 @@
                   class="form-control"
                   id="emailUser"
                   placeholder="Your email"
+                  maxlength="100"
+                  name="email"
                 />
                 <div id="emailHelp" class="form-text"></div>
               </div>
@@ -595,15 +662,24 @@
                   id="messageUser"
                   class="form-control"
                   placeholder="Enter a message"
+                  maxlength="500"
+                  name="message"
                 ></textarea>
                 <div id="messageHelp" class="form-text"></div>
               </div>
-              <button
-                type="submit"
-                class="btn btn-white box-shadow"
-                id="sendContact"
-              >
+              <button type="submit" class="btn btn-white box-shadow btn-send">
                 Send Message
+              </button>
+              <button
+                class="btn btn-white box-shadow btn-dark btn-loading d-none"
+                disabled
+              >
+                <span
+                  class="spinner-border me-2 spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+                Sending...
               </button>
             </form>
           </div>
