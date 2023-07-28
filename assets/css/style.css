@@ -223,7 +223,7 @@ a {
   border: var(--border);
   border-radius: var(--border-radius-default);
   transition: all 150ms ease;
-  /* cursor: pointer; */
+  min-height: 24rem !important;
 }
 
 .card:hover {

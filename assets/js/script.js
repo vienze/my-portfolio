@@ -1,3 +1,8 @@
+window.onload = () => {
+  document.getElementsByTagName("body").style.backgroundColor = "#000";
+};
+document.getElementsByTagName("body").style.backgroundColor = "var(--light)";
+
 // NAVBAR CHANGE ICON TOGGLER MENU
 const iconTogglerMenu = document.querySelector(".navbar-toggler .bi");
 
