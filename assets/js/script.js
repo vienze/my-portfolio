@@ -1,5 +1,3 @@
-
-
 // NAVBAR CHANGE ICON TOGGLER MENU
 const iconTogglerMenu = document.querySelector(".navbar-toggler .bi");
 
@@ -137,6 +135,18 @@ if (form) {
     }
   });
 }
+
+const badWord = ["tai", "fvk", "fuck"];
+messageUser.addEventListener("keyup", (e) => {
+  const word = e.target.value.toLowerCase();
+  for (i of badWord) {
+    word.includes(i)
+      ? alertText(messageHelp, "Say no to Bad Word!!!")
+      : alertText(messageHelp, "Thank you for not Bad Word!!!");
+
+   
+  }
+});
 
 // BOOTSTRAP JAVASCRIPT
 // ENABLE TOOLTIPS
